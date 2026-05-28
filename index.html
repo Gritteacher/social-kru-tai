@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>สังคมศึกษาครูไต๋</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="page">
+
+    <header class="topbar">
+      <nav class="navbar">
+        <a href="#home" class="nav-link active">หน้าแรก</a>
+        <a href="#media" class="nav-link">สื่อการเรียนรู้</a>
+        <button class="nav-button" onclick="openLoginModal()">เข้าสู่ระบบ</button>
+      </nav>
+    </header>
+
+    <main id="home" class="main">
+
+      <section class="hero">
+        <div class="logo-box">
+          <span>LOGO</span>
+        </div>
+
+        <h1>สังคมศึกษาครูไต๋</h1>
+        <p class="hero-subtitle">แหล่งรวบรวมสื่อการเรียนรู้และเอกสารประกอบการเรียน</p>
+      </section>
+
+      <section class="subject-title">
+        <h2>สังคมศึกษา 5</h2>
+        <p>สาระเศรษฐศาสตร์</p>
+      </section>
+
+      <section id="media" class="card-section">
+        <div class="section-heading">
+          <h2>สื่อการเรียนรู้</h2>
+          <p>สามารถเพิ่ม แก้ไข หรือลบรายการได้จาก Google Sheet</p>
+        </div>
+
+        <div id="loading" class="loading-box">
+          กำลังโหลดข้อมูล...
+        </div>
+
+        <div id="cardContainer" class="card-grid"></div>
+
+        <div id="emptyState" class="empty-state hidden">
+          <h3>ยังไม่มีสื่อการเรียนรู้</h3>
+          <p>สามารถเพิ่มข้อมูลภายหลังได้จาก Google Sheet</p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p>
+        พัฒนาโดย นายกฤษณพล ทองอุ่น ครูกลุ่มสาระการเรียนรู้สังคมศึกษา ศาสนา และวัฒนธรรม โรงเรียนเทพศิรินทร์ นนทบุรี
+      </p>
+    </footer>
+
+  </div>
+
+  <div id="loginModal" class="modal">
+    <div class="modal-card">
+      <button class="close-button" onclick="closeLoginModal()">×</button>
+
+      <h2>เข้าสู่ระบบ</h2>
+      <p>สำหรับผู้ดูแลระบบ</p>
+
+      <input
+        type="password"
+        id="adminPassword"
+        placeholder="กรอกรหัสผ่าน"
+        autocomplete="off"
+      />
+
+      <button class="login-submit" onclick="adminLogin()">เข้าสู่ระบบ</button>
+
+      <p id="loginMessage" class="login-message"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
