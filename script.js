@@ -1,4 +1,4 @@
-const GOOGLE_SCRIPT_URL = "ใส่ URL Web App จาก Google Apps Script ตรงนี้";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz1flMi0L8o3XU41EvaDI9fcpnfJafIzBNv0P4ECpt6leFGppjeh6InuJRbQt9uY83C/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
   loadLearningMedia();
