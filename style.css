@@ -1,0 +1,358 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Prompt", sans-serif;
+  color: #172033;
+  background:
+    radial-gradient(circle at top left, rgba(180, 210, 255, 0.5), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(255, 226, 181, 0.65), transparent 35%),
+    linear-gradient(135deg, #f8fafc, #eef2ff);
+}
+
+.page {
+  width: min(100%, 1120px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0 22px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.nav-link,
+.nav-button {
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: #475569;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-button:hover,
+.nav-link.active {
+  color: #ffffff;
+  background: #1e293b;
+}
+
+.main {
+  flex: 1;
+}
+
+.hero {
+  text-align: center;
+  padding: 28px 0 18px;
+}
+
+.logo-box {
+  width: 128px;
+  height: 128px;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+}
+
+.logo-box span {
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #334155;
+  letter-spacing: 1px;
+}
+
+.hero h1 {
+  font-size: clamp(2.3rem, 7vw, 4.3rem);
+  font-weight: 500;
+  letter-spacing: -1.2px;
+  color: #0f172a;
+}
+
+.hero-subtitle {
+  margin-top: 12px;
+  color: #64748b;
+  font-size: 1.05rem;
+}
+
+.subject-title {
+  width: min(100%, 680px);
+  margin: 30px auto 42px;
+  padding: 22px 18px;
+  text-align: center;
+  border-top: 1px solid rgba(71, 85, 105, 0.25);
+  border-bottom: 1px solid rgba(71, 85, 105, 0.25);
+}
+
+.subject-title h2 {
+  font-size: 1.55rem;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.subject-title p {
+  margin-top: 7px;
+  color: #64748b;
+}
+
+.card-section {
+  padding: 6px 0 50px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.section-heading h2 {
+  font-size: 1.55rem;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.section-heading p {
+  margin-top: 8px;
+  color: #64748b;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 330px));
+  justify-content: center;
+  gap: 26px;
+}
+
+.learning-card {
+  position: relative;
+  min-height: 245px;
+  padding: 24px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  box-shadow: 0 22px 48px rgba(15, 23, 42, 0.09);
+  backdrop-filter: blur(16px);
+  transition: 0.25s ease;
+  overflow: hidden;
+}
+
+.learning-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 32px 76px rgba(15, 23, 42, 0.15);
+}
+
+.card-cover {
+  width: 100%;
+  height: 118px;
+  border-radius: 20px;
+  margin-bottom: 18px;
+  background:
+    linear-gradient(135deg, rgba(30, 41, 59, 0.88), rgba(71, 85, 105, 0.78)),
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.5), transparent 35%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 2.1rem;
+}
+
+.learning-card h3 {
+  font-size: 1.18rem;
+  font-weight: 500;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.learning-card p {
+  color: #64748b;
+  line-height: 1.75;
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #1e293b;
+  color: white;
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.loading-box,
+.empty-state {
+  width: min(100%, 680px);
+  margin: 0 auto;
+  padding: 26px;
+  text-align: center;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  color: #64748b;
+}
+
+.empty-state h3 {
+  color: #1e293b;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+.footer {
+  padding: 24px 12px 10px;
+  text-align: center;
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+  color: #64748b;
+  line-height: 1.8;
+  font-size: 0.92rem;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  display: none;
+  place-items: center;
+  padding: 18px;
+  background: rgba(15, 23, 42, 0.58);
+}
+
+.modal.show {
+  display: grid;
+}
+
+.modal-card {
+  position: relative;
+  width: min(100%, 420px);
+  padding: 32px;
+  border-radius: 30px;
+  background: #ffffff;
+  box-shadow: 0 32px 80px rgba(15, 23, 42, 0.3);
+  text-align: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+.modal-card h2 {
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.modal-card p {
+  margin-top: 6px;
+  margin-bottom: 18px;
+  color: #64748b;
+}
+
+.modal-card input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  border-radius: 16px;
+  border: 1px solid #cbd5e1;
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+}
+
+.modal-card input:focus {
+  border-color: #1e293b;
+}
+
+.login-submit {
+  width: 100%;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 16px;
+  background: #1e293b;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.login-message {
+  margin-top: 14px;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 14px;
+  }
+
+  .navbar {
+    width: 100%;
+    flex-wrap: wrap;
+    border-radius: 24px;
+  }
+
+  .nav-link,
+  .nav-button {
+    flex: 1;
+    min-width: 95px;
+    text-align: center;
+    padding: 9px 10px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .learning-card {
+    min-height: auto;
+  }
+
+  .hero {
+    padding-top: 18px;
+  }
+}
